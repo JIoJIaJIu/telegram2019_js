@@ -1,0 +1,90 @@
+$margin_left: 5px;
+$heading_font_size: 14px;
+$zoom_size: 16px;
+
+.plot {
+  margin: 0 0 10px 0;
+  position: relative;
+  display: inline-block;
+  opacity: 1;
+  transition: opacity 0.2s;
+
+  .plot_heading {
+    overflow: hidden;
+    margin-left: $margin_left;
+    font-size: $heading_font_size;
+
+    .plot_title {
+      float: left;
+    }
+
+    .plot_range {
+      float: right;
+    }
+
+    .zoom_out {
+      display: none;
+      color: #108BE3;
+      fill: #108BE3;
+      text-decoration: none;
+      outline: none;
+      float: left;
+      margin-left: 5px;
+
+
+      .icon {
+        display: inline-block;
+        text-align: center;
+      }
+
+      svg {
+        width: $zoom_size;
+        height: $zoom_size;
+        display: inline-block;
+        font-size: 0;
+      }
+
+      &:hover {
+        svg {
+        }
+      }
+    }
+  }
+
+  .plot_internal {
+    position: relative;
+    display: inline-block;
+
+    .graph {
+      margin: 20px $margin_left 30px $margin_left;
+      display: inline-block;
+    }
+
+  }
+}
+
+.plot.is_zoomed {
+  .zoom_out {
+    display: block;
+  }
+  .plot_title {
+    display: none;
+  }
+}
+
+.plot.disappear {
+  opacity: 0;
+}
+
+body.dark {
+  .plot_heading {
+    color: white;
+  }
+}
+
+@media only screen and (-moz-min-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min-device-pixel-ratio: 2) {
+  //TODO:
+}
